@@ -1,4 +1,4 @@
-# swift-version
+# Version
 
 [![Swift Version](https://img.shields.io/badge/Swift-5.6+-orange.svg)](https://swift.org/)
 [![SPM](https://img.shields.io/badge/SPM-compatible-brightgreen.svg)](https://swift.org/package-manager/)
