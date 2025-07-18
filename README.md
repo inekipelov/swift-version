@@ -31,6 +31,17 @@ version1 == "1.2.3"  // true
 let range = Version(major: 1)...Version(major: 2)
 range.contains(version1)  // true
 
+// Switch case support
+let appVersion: Version = "2.1.0"
+switch appVersion {
+case Version(major: 2, minor: 0, patch: 0)...Version(major: 2, minor: 9, patch: 999):
+    print("Version 2.x")
+case "3.0.0":
+    print("Version 3.0.0")
+default:
+    print("Other version")
+}
+
 // Foundation integration
 let bundle = Bundle.main
 let appVersion = bundle.appVersion  // Version
