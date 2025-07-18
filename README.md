@@ -33,7 +33,7 @@ range.contains(version1)  // true
 
 // Foundation integration
 let bundle = Bundle.main
-let appVersion = bundle.version  // Version
+let appVersion = bundle.appVersion  // Version
 
 // StoreKit integration (iOS 16.0+)
 #if canImport(StoreKit)

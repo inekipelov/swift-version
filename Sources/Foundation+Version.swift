@@ -11,7 +11,7 @@ public extension Bundle {
     
     /// The version of the application bundle.
     @available(iOS 2.0, macOS 10.0, tvOS 9.0, watchOS 2.0, visionOS 1.0, *)
-    var version: Version {
+    var appVersion: Version {
         guard let version = infoDictionary?["CFBundleShortVersionString"]
             .flatMap({ $0 as? String })?
             .map(Version.init(stringLiteral:))

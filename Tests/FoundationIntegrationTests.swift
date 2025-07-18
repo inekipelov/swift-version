@@ -9,7 +9,7 @@ final class FoundationIntegrationTests: XCTestCase {
     func testBundleVersionExtraction() {
         // Test with main bundle (if available)
         let mainBundle = Bundle.main
-        let version = mainBundle.version
+        let version = mainBundle.appVersion
         
         // Should always return a valid version (at least null)
         XCTAssertGreaterThanOrEqual(version.major, 0)
@@ -25,7 +25,7 @@ final class FoundationIntegrationTests: XCTestCase {
             "CFBundleVersion": "456"
         ]
         
-        let version = mockBundle.version
+        let version = mockBundle.appVersion
         XCTAssertEqual(version.major, 1)
         XCTAssertEqual(version.minor, 2)
         XCTAssertEqual(version.patch, 3)
@@ -39,7 +39,7 @@ final class FoundationIntegrationTests: XCTestCase {
             "CFBundleVersion": "123"
         ]
         
-        let version = mockBundle.version
+        let version = mockBundle.appVersion
         // When version string is invalid, it falls back to null (0.0.0) but includes the build number
         XCTAssertEqual(version.major, 0)
         XCTAssertEqual(version.minor, 0)
@@ -51,7 +51,7 @@ final class FoundationIntegrationTests: XCTestCase {
         let mockBundle = MockBundle()
         mockBundle.mockInfoDictionary = [:]
         
-        let version = mockBundle.version
+        let version = mockBundle.appVersion
         XCTAssertEqual(version, Version.null)
     }
     
