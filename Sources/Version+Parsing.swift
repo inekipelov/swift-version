@@ -152,10 +152,3 @@ private extension Version {
         }
     }
 }
-
-// MARK: - Array Safe Subscript (shared utility)
-extension Array {
-    subscript(safe index: Int) -> Element? {
-        (startIndex..<endIndex).contains(index) ? self[index] : nil
-    }
-}
